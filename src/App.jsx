@@ -9,7 +9,7 @@ import { Route, Routes, useLocation } from "react-router";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import SponsorPage from "./pages/SponsorPage";
 import MerchPage from "./pages/MerchPage";
-import TeamPage from "./pages/TeamPage";
+import TeamPage from "./pages/TeamPage/TeamPage";
 import RegisterPage from "./pages/RegisterPage";
 import { ToastContainer } from "react-toastify";
 
