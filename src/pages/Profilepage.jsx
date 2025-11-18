@@ -36,6 +36,7 @@ export function Profile() {
       setUser("");
       setEmail("");
       setMobileNumber("");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
