@@ -90,7 +90,6 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
 }
 
-/* Shared Background Styles */
 .shared-background {
   position: fixed;
   inset: 0;
