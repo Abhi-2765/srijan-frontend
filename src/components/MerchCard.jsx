@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import TShirt from "../assets/TShirt.jpeg"
 
 export default function MerchCard({ event, index, onClick }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -36,7 +37,7 @@ export default function MerchCard({ event, index, onClick }) {
                 alt={event.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#08061E]/100 via-[#301258]/10 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#08061E] via-[#301258]/10 to-transparent" />
 
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-bold font-['Cinzel_Decorative'] text-[#FED000] drop-shadow-lg">
@@ -142,7 +143,8 @@ export default function MerchCard({ event, index, onClick }) {
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-center text-2xl font-['Cinzel_Decorative'] mt-4 font-bold pb-5 pt-5">
-              MERCH COMING SOON....
+              {/* MERCH COMING SOON.... */}
+              <img src={TShirt} alt="tshirt" className="rounded-xl shadow-[#FED000]/50 shadow-xl hover:scale-103 hover:shadow-[#FED000]/80 transition-all duration-200" />
             </h2>
 
             <button
