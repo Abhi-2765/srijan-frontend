@@ -94,8 +94,11 @@ function PassCard({ name, level, days, price, features, image }) {
 
     const res = await fetch("https://srijan-2026.onrender.com/api/payments/create-order", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
-        price,
+        "amount":price,
       })
     });
 
@@ -103,8 +106,8 @@ function PassCard({ name, level, days, price, features, image }) {
 
 
     var options = {
-      "key": "YOUR_KEY_ID", // Enter the Key ID generated from the Dashboard
-      "amount": "50000", // Amount is in currency subunits.
+      "key": "rzp_test_S1qxG3nMDqsO48", // Enter the Key ID generated from the Dashboard
+      "amount": order.amount, // Amount is in currency subunits.
       "currency": "INR",
       "name": "Acme Corp", //your business name
       "description": "Test Transaction",
