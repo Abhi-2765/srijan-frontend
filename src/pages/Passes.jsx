@@ -15,7 +15,7 @@ const passes = {
       name: 'RHYTHM',
       level: 'BASIC',
       days: '1 DAY',
-      price: '₹500',
+      price: '₹509',
       image: rhythmBasic,
       features: [
         'Access to all Events',
@@ -29,7 +29,7 @@ const passes = {
       name: 'GROOVE',
       level: 'BASIC',
       days: '2 DAYS',
-      price: '₹749',
+      price: '₹764',
       image: grooveBasic,
       features: [
         'Access to all Events',
@@ -43,7 +43,7 @@ const passes = {
       name: 'CARNIVAL',
       level: 'BASIC',
       days: '3 DAYS',
-      price: '₹999',
+      price: '₹1019',
       image: carnivalBasic,
       features: [
         'Access to all Events',
@@ -59,7 +59,7 @@ const passes = {
       name: 'RHYTHM',
       level: 'ADVANCED',
       days: '1 DAY',
-      price: '₹899',
+      price: '₹919',
       image: rhythmAdvanced,
       features: [
         'Access to all Events',
@@ -73,7 +73,7 @@ const passes = {
       name: 'GROOVE',
       level: 'ADVANCED',
       days: '2 DAYS',
-      price: '₹1499',
+      price: '₹1529',
       image: grooveAdvanced,
       features: [
         'Access to all Events',
@@ -87,7 +87,7 @@ const passes = {
       name: 'CARNIVAL',
       level: 'ADVANCED',
       days: '3 DAYS',
-      price: '₹2099',
+      price: '₹2141',
       image: carnivalAdvanced,
       features: [
         'Access to all Events',
