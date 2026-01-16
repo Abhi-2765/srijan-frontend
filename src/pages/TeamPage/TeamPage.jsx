@@ -51,6 +51,7 @@ import divyanshu from "./ProfileImage/divyanshu.jpeg"
 import sawan from "./ProfileImage/sawan.jpg"
 import Harsh from "./ProfileImage/Harsh.jpg"
 import Yash from "./ProfileImage/Yash.jpg"
+import shaumya from "./ProfileImage/shaumya.jpg"
 
 
 const teamSections = [
@@ -61,7 +62,7 @@ const teamSections = [
         name: "SHAUMYA",
         surname: "KUMAR",
         role: "Coordinator",
-        img: img1,
+        img: shaumya,
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
