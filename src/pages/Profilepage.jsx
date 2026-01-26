@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import axiosInstance from "../utils/axiosInstance";
 import "./Profilepage.css";
 import PageHeader from "../components/PageHeader/PageHeader";
+import { toast } from "react-toastify";
 
 export function Profile() {
   const [user, setUser] = useState("");
@@ -24,6 +25,8 @@ export function Profile() {
       setUser("");
       setEmail("");
       setMobileNumber("");
+      navigate("/register");
+      toast.error("Please login to continue")
     }
   }
 
