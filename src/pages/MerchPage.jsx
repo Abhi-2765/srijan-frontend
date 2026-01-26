@@ -41,7 +41,7 @@ function MerchPage() {
             viewport={{ once: true }}
             className="w-85"
           >
-            <MerchCard event={event} index={i} onClick={() => { }} />
+            <MerchCard event={event} index={i}/>
           </motion.div>
         ))}
       </div>
