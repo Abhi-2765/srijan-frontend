@@ -56,8 +56,10 @@ function SponsorPage() {
         <div className="sponsor-section">
           <h2 className="sponsor-section-title">TITLE SPONSOR</h2>
           <div className="title-sponsor-wrapper">
-            <div className="sponser-circle-frame title-sponsor">
-              <img src={myntra} alt="Myntra - Title Sponsor" />
+            <div className="sponser-circle-frame-title title-sponsor">
+              <a href='https://www.myntra.com/' target='_blank'>
+                <img src={myntra} alt="Myntra - Title Sponsor" className='p-10 md:p-15' />
+              </a>
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@ function SponsorPage() {
         {/* Past Sponsors Section */}
         <div className="sponsor-section">
           <h2 className="sponsor-section-title">PAST SPONSORS</h2>
-          
+
           <div className="sponsers-grid">
 
             {/* 🔹 Row 1 */}
@@ -132,7 +134,7 @@ function SponsorPage() {
               <div className="sponser-circle-frame"><img src={gailImg} alt="GAIL" /></div>
               <div className="sponser-circle-frame"><img src={mgImg} alt="MG" /></div>
             </div>
-          
+
           </div>
         </div>
       </div>
