@@ -11,7 +11,7 @@ import DRAMA from "./Images/DRAMA.jpg";
 import LITERACY from "./Images/LITERACY.jpg";
 import MUSIC from "./Images/MUSIC.jpg";
 
-export default function Display({ category }) {
+export default function Display({ category , date }) {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -32,6 +32,25 @@ export default function Display({ category }) {
     };
     fetchEvents();
   }, [category]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const url = category === "ALL"
+          ? "https://srijan-2026.onrender.com/api/v1/event/all"
+          : `https://srijan-2026.onrender.com/api/v1/event/category/${date}`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch events");
+        const data = await response.json();
+        setEvents(data.data);// events will be set in events,use it in frontend as needed
+      } catch(err){
+        console.error("Error fetching events:", err);
+      }
+    };
+    fetchEvents();
+  }, [date]);
+
+
 
   return (
     <>
