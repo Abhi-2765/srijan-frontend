@@ -215,6 +215,57 @@
   box-shadow: 0 0 10px rgba(254, 208, 0, 0.6);
 }
 
+.event-date-dropdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.date-dropdown-label {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold-text, #FED000);
+  letter-spacing: 0.05em;
+}
+
+.date-dropdown-select {
+  padding: 12px 20px;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-text, #FED000);
+  background: rgba(92, 42, 154, 0.3);
+  border: 2px solid rgba(166, 83, 156, 0.6);
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  outline: none;
+  min-width: 150px;
+}
+
+.date-dropdown-select:hover {
+  border-color: var(--gold-text, #FED000);
+  box-shadow: 0 0 20px rgba(254, 208, 0, 0.3);
+}
+
+.date-dropdown-select:focus {
+  border-color: var(--gold-text, #FED000);
+  box-shadow: 0 0 25px rgba(254, 208, 0, 0.5);
+}
+
+.date-dropdown-select option {
+  background: var(--primary-abyss, #301258);
+  color: var(--gold-text, #FED000);
+  font-family: 'Cinzel Decorative', cursive;
+  padding: 10px;
+}
+
 .event-display-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -242,6 +293,16 @@
   .event-category-icon-wrapper {
     width: 64px;
     height: 64px;
+  }
+
+  .date-dropdown-label {
+    font-size: 0.9rem;
+  }
+
+  .date-dropdown-select {
+    font-size: 0.85rem;
+    padding: 10px 18px;
+    min-width: 140px;
   }
 }
 
@@ -279,6 +340,22 @@
     font-size: 0.75rem;
   }
 
+  .date-dropdown-container {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .date-dropdown-label {
+    font-size: 0.85rem;
+  }
+
+  .date-dropdown-select {
+    font-size: 0.8rem;
+    padding: 10px 16px;
+    min-width: 180px;
+  }
+
   .event-page-header {
     margin-bottom: 40px;
     margin-top: 60px;
@@ -310,6 +387,16 @@
 
   .event-category-name {
     font-size: 0.7rem;
+  }
+
+  .date-dropdown-label {
+    font-size: 0.75rem;
+  }
+
+  .date-dropdown-select {
+    font-size: 0.7rem;
+    padding: 8px 14px;
+    min-width: 160px;
   }
 
   .event-back-button svg {

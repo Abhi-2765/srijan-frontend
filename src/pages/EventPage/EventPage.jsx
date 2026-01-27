@@ -27,9 +27,11 @@ const categories = [
 ];
 
 const dates = [
-  "6th Feb",
-  "7th Feb",
-  "8th Feb"
+  { label: "All Days", value: "ALL" },
+  { label: "5th Feb", value: "5th Feb" },
+  { label: "6th Feb", value: "6th Feb" },
+  { label: "7th Feb", value: "7th Feb" },
+  { label: "8th Feb", value: "8th Feb" }
 ];
 
 export default function EventPage() {
@@ -156,12 +158,35 @@ export default function EventPage() {
         </motion.nav>
 
         <motion.div
+          className="event-date-dropdown-container"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+        >
+          <label htmlFor="date-select" className="date-dropdown-label">
+            Select Day:
+          </label>
+          <select
+            id="date-select"
+            value={activeDate}
+            onChange={(e) => setActiveDate(e.target.value)}
+            className="date-dropdown-select"
+          >
+            {dates.map((date, index) => (
+              <option key={index} value={date.value}>
+                {date.label}
+              </option>
+            ))}
+          </select>
+        </motion.div>
+
+        <motion.div
           className="event-display-container"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
         >
-          <Display category={activeCategory} />
+          <Display category={activeCategory} date={activeDate} />
         </motion.div>
       </div>
     </div>
