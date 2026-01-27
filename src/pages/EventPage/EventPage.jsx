@@ -28,10 +28,10 @@ const categories = [
 
 const dates = [
   { label: "All Days", value: "ALL" },
-  { label: "5th Feb", value: "5th Feb" },
-  { label: "6th Feb", value: "6th Feb" },
-  { label: "7th Feb", value: "7th Feb" },
-  { label: "8th Feb", value: "8th Feb" }
+  { label: "5th Feb", value: "5th February, 2026" },
+  { label: "6th Feb", value: "6th February, 2026" },
+  { label: "7th Feb", value: "7th February, 2026" },
+  { label: "8th Feb", value: "8th February, 2026" }
 ];
 
 export default function EventPage() {
