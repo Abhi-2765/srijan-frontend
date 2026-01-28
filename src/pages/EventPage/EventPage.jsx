@@ -8,7 +8,7 @@ import DRAMA from "./EventIcons/DRAMA.png";
 import FASHION from "./EventIcons/FASHION.png";
 import LITERACY from "./EventIcons/LITERACY.png";
 import MUSIC from "./EventIcons/MUSIC.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
@@ -26,8 +26,19 @@ const categories = [
   { icon: COMEDY, categoryname: "COMEDY" },
 ];
 
+const dates = [
+  { label: "All Days", value: "ALL" },
+  { label: "5th Feb", value: "5th February, 2026" },
+  { label: "6th Feb", value: "6th February, 2026" },
+  { label: "7th Feb", value: "7th February, 2026" },
+  { label: "8th Feb", value: "8th February, 2026" }
+];
+
 export default function EventPage() {
+
   const [activeCategory, setActiveCategory] = useState("ALL");
+  const [activeDate,setActiveDate]=useState("ALL");
+
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
       const userString = localStorage.getItem("user_1");
@@ -51,7 +62,11 @@ export default function EventPage() {
       <div className="event-page-content">
         <PageHeader
           title="EVENTS"
-          subtitle="Explore the vibrant spectrum of cultural celebrations"
+          // subtitle="Explore the vibrant spectrum of cultural celebrations"
+          subtitle="If you have purchased pass for 1 DAY in that case you can only register for DAY 1 events i.e. 6th Feb on the website , If you have purchased pass for 2 DAYS in that case you can only register for DAY 1 & 2 events i.e. 6th and 7th Feb on the website,
+
+          If you have purchased pass for 3 DAYS in that case you can register for DAY 1,2 & 3 events i.e. 6th, 7th and 8th Feb on the website,
+          "
           showBackButton={true}
           backPath="/"
           titleDelay={0.2}
@@ -143,12 +158,35 @@ export default function EventPage() {
         </motion.nav>
 
         <motion.div
+          className="event-date-dropdown-container"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+        >
+          <label htmlFor="date-select" className="date-dropdown-label">
+            Select Day:
+          </label>
+          <select
+            id="date-select"
+            value={activeDate}
+            onChange={(e) => setActiveDate(e.target.value)}
+            className="date-dropdown-select"
+          >
+            {dates.map((date, index) => (
+              <option key={index} value={date.value}>
+                {date.label}
+              </option>
+            ))}
+          </select>
+        </motion.div>
+
+        <motion.div
           className="event-display-container"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
         >
-          <Display category={activeCategory} />
+          <Display category={activeCategory} date={activeDate} />
         </motion.div>
       </div>
     </div>

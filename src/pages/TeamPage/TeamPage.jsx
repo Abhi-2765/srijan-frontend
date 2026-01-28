@@ -114,14 +114,6 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "ROHIT",
-        surname: "Guleria",
-        role: " Co-head",
-        img: Rohit,
-        linkedin: "https://www.linkedin.com/in/rohit--guleria",
-        instagram: "https://www.instagram.com/ro_guleria",
-      },
-      {
         name: "Devang ",
         surname: "Sharma",
         role: "Member",
@@ -496,7 +488,7 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "VENKATESH KUMAR",
+        name: "VENKATESH",
         surname: "JAGANA",
         role: "Co-Head",
         img: Jagana,
@@ -721,7 +713,7 @@ function TeamPage() {
 
   const renderTeamMembers = (members, isWebDev = false) => {
     let displayMembers = members;
-    
+
     if (isWebDev && !isWebDevExpanded) {
       // Show only Head and Co-Heads (first 3 members)
       displayMembers = members.slice(0, 3);
@@ -831,7 +823,7 @@ function TeamPage() {
       <div className="max-w-7xl mx-auto px-6 mt-16 space-y-20">
         {teamSections.map((section, sectionIndex) => {
           const isWebDev = section.title === "WEB DEVELOPMENT TEAM";
-          
+
           return (
             <div key={sectionIndex}>
               <motion.div
@@ -846,7 +838,7 @@ function TeamPage() {
                 >
                   {section.title}
                 </h2>
-                
+
                 {isWebDev && (
                   <button
                     onClick={() => setIsWebDevExpanded(!isWebDevExpanded)}

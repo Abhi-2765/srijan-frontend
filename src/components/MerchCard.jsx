@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function MerchCard({ event, index, onClick }) {
+export default function MerchCard({ event, index }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(false);
 
@@ -11,7 +11,8 @@ export default function MerchCard({ event, index, onClick }) {
 
   const handleBuyNow = (e) => {
     e.stopPropagation();
-    setShowComingSoon(true);
+    // setShowComingSoon(true);
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzJ1C8hVw3URn4dhN2D1KZOX8XoME8usclRFyIaMI90dTXwA/viewform?usp=sharing&ouid=112626484357776465857', '_blank')
   };
 
   return (
