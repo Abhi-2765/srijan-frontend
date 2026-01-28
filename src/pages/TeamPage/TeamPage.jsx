@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { FaLinkedinIn, FaInstagram, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 import atharv from "./ProfileImage/atharv.jpg"
-import UDBHAV from "./ProfileImage/UDBHAV.jpg"
+import UDBHAV from "./ProfileImage/UDBHAV.JPG"
 import Yamali from "./ProfileImage/Yamali.jpg"
 import Guguloth from "./ProfileImage/Guguloth.jpg"
 import Adityashah from "./ProfileImage/Adityashah.jpg"

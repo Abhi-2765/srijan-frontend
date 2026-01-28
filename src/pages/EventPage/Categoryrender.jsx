@@ -12,10 +12,11 @@ import LITERACY from "./Images/LITERACY.jpg";
 import MUSIC from "./Images/MUSIC.jpg";
 
 export default function Display({ category , date }) {
-  const [events, setEvents] = useState([]);
+  const [allEvents, setAllEvents] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-
+  // Fetch events based on category
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -25,37 +26,34 @@ export default function Display({ category , date }) {
         const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to fetch events");
         const data = await response.json();
-        setEvents(data.data);// events will be set in events,use it in frontend as needed
+        setAllEvents(data.data);
       } catch(err){
         console.error("Error fetching events:", err);
+        setAllEvents([]);
       }
     };
     fetchEvents();
   }, [category]);
 
+  // Filter events by date
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const url = category === "ALL"
-          ? "https://srijan-2026.onrender.com/api/v1/event/all"
-          : `https://srijan-2026.onrender.com/api/v1/event/category/${date}`;
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch events");
-        const data = await response.json();
-        setEvents(data.data);// events will be set in events,use it in frontend as needed
-      } catch(err){
-        console.error("Error fetching events:", err);
-      }
-    };
-    fetchEvents();
-  }, [date]);
+    if (date === "ALL") {
+      setFilteredEvents(allEvents);
+    } else {
+      const filtered = allEvents.filter(event => {
+        // Check if event has a date property and matches the selected date
+        return event.date === date || event.eventDate === date || event.day === date;
+      });
+      setFilteredEvents(filtered);
+    }
+  }, [date, allEvents]);
 
 
 
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 sm:px-8 md:px-16 lg:px-32">
-        {events.length === 0 && (
+        {filteredEvents.length === 0 && (
           <motion.p
             key="no-data"
             initial={{ opacity: 0 }}
@@ -63,11 +61,11 @@ export default function Display({ category , date }) {
             exit={{ opacity: 0 }}
             className="text-[#FED000] font-['Cinzel_Decorative'] text-center col-span-full font-semibold"
           >
-            NO EVENTS FOUND FOR {category}
+            NO EVENTS FOUND FOR {category} {date !== "ALL" ? `ON ${date}` : ""}
           </motion.p>
         )}
 
-        {events.map((event, index) => (
+        {filteredEvents.map((event, index) => (
           <EventCard
             key={index}
             event={event}
