@@ -12,7 +12,7 @@ import textBackdropSrc from "../../assets/text-backdrop.png";
 import darkCloudBottom from "../../assets/Dark Cloud Bottom.png";
 import lightCloudBottom from "../../assets/Light Cloud Bottom.png";
 import GradientInterval from "./GradientInterval";
-import glamfest from "/sponsers/Glamfest.png"
+import Myntra from "/sponsers/Myntra.png"
 
 const navItems = [
   { path: "/", label: "HOME", hindi: "गृह" },
@@ -486,15 +486,15 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
               >
 
                 <div className="relative">
-                  <p className="text-[#FED000] text-sm font-['Cinzel'] font-bold tracking-wider opacity-90 relative z-10 text-shadow-lg">
+                  <p className="text-[#FED000] mb-4 text-md font-['Cinzel'] font-bold tracking-wider opacity-90 relative z-10 text-shadow-lg">
                     TITLE SPONSOR
                   </p>
                   <div className="absolute inset-0 bg-[#FED000]/30 blur-3xl scale-125 animate-pulse" />
-                  <a className="relative z-10" href="https://www.myntra.com/" target="_blank">
+                  <a className="relative left-1 z-10" href="https://www.myntra.com/" target="_blank">
                     <img
-                      src={glamfest}
-                      alt="Glamfest - Title Sponsor"
-                      className="h-24 w-auto object-contain drop-shadow-[0_0_25px_rgba(254,208,0,0.6)] hover:h-25 transition-all duration-300 animate-logo-bounce"
+                      src={Myntra}
+                      alt="Myntra - Title Sponsor"
+                      className="h-30 w-auto object-contain drop-shadow-[0_0_25px_rgba(254,208,0,0.6)] hover:h-31 transition-all duration-300 animate-logo-bounce"
                     />
                   </a>
                 </div>
