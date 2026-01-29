@@ -35,6 +35,7 @@ import relianceImg from '/sponsers/reliance.png';
 import gailImg from '/sponsers/gail.png';
 import mgImg from '/sponsers/mg.png';
 import myntra from '/sponsers/Myntra.png'
+import krafton from '/sponsers/krafton.png'
 
 function SponsorPage() {
   return (
@@ -68,8 +69,8 @@ function SponsorPage() {
         <div className="sponsor-section">
           <h2 className="sponsor-section-title">GAMING PARTNER</h2>
           <div className="title-sponsor-wrapper">
-            <div className="sponser-circle-frame gaming-partner">
-              <div className="placeholder-logo">KRAFTON</div>
+            <div className="">
+              <img src={krafton} alt="Krafton - Gaming Partner" className='p-10 md:p-15' />
             </div>
           </div>
         </div>

@@ -269,6 +269,14 @@ const teamSections = [
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
+      {
+        name: "JATIN",
+        surname: "-",
+        role: "Co-Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
     ],
   },
 
@@ -299,22 +307,22 @@ const teamSections = [
         linkedin: "https://linkedin.com",
         instagram: "https://instagram.com",
       },
-      // {
-      //   name: "SAYON",
-      //   surname: "DAS",
-      //   role: "Co-Head ",
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
-      // {
-      //   name: "PRIOMA",
-      //   surname: "CHAKRABORTY ",
-      //   role: "Co-Head",
-      //   img: Prioma_Chakraborty,
-      //   linkedin: "http://www.linkedin.com/in/priomachakraborty98",
-      //   instagram: "https://www.instagram.com/priomachakraborty?igsh=MW00cXA5NnpwNzF2Mg==",
-      // },
+      {
+        name: "SAYON",
+        surname: "DAS",
+        role: "Co-Head ",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "PRIOMA",
+        surname: "CHAKRABORTY ",
+        role: "Co-Head",
+        img: Prioma_Chakraborty,
+        linkedin: "http://www.linkedin.com/in/priomachakraborty98",
+        instagram: "https://www.instagram.com/priomachakraborty?igsh=MW00cXA5NnpwNzF2Mg==",
+      },
     ],
   },
   {
@@ -360,6 +368,30 @@ const teamSections = [
       {
         name: "ADHAYAYAN ",
         surname: "KUSHAGRA SHANDILYA ",
+        role: "Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "BHANOTHU ",
+        surname: "SAI PRASAD ",
+        role: "Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "MOHAMAMAD ",
+        surname: "NAVEED",
+        role: "Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "TANISHQ ",
+        surname: "UNHALE",
         role: "Head",
         img: img1,
         linkedin: "https://linkedin.com",
@@ -456,7 +488,7 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "VENKATESH KUMAR",
+        name: "VENKATESH",
         surname: "JAGANA",
         role: "Co-Head",
         img: Jagana,
@@ -558,22 +590,22 @@ const teamSections = [
         linkedin: "https://www.linkedin.com/in/sanatanbagaria/",
         instagram: "https://www.instagram.com/sanatan_bagaria/",
       },
-      // {
-      //   name: "SHAURYA",
-      //   surname: "BOTHRA",
-      //   role: "Co-Head",
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
-      // {
-      //   name: "RAJEEV",
-      //   surname: "LOCHAN",
-      //   role: "Co-Head",
-      //   img: img1,
-      //   linkedin: "https://linkedin.com",
-      //   instagram: "https://instagram.com",
-      // },
+      {
+        name: "SHAURYA",
+        surname: "BOTHRA",
+        role: "Co-Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
+      {
+        name: "RAJEEV",
+        surname: "LOCHAN",
+        role: "Co-Head",
+        img: img1,
+        linkedin: "https://linkedin.com",
+        instagram: "https://instagram.com",
+      },
     ],
   },
   {
@@ -681,7 +713,7 @@ function TeamPage() {
 
   const renderTeamMembers = (members, isWebDev = false) => {
     let displayMembers = members;
-    
+
     if (isWebDev && !isWebDevExpanded) {
       // Show only Head and Co-Heads (first 3 members)
       displayMembers = members.slice(0, 3);
@@ -791,7 +823,7 @@ function TeamPage() {
       <div className="max-w-7xl mx-auto px-6 mt-16 space-y-20">
         {teamSections.map((section, sectionIndex) => {
           const isWebDev = section.title === "WEB DEVELOPMENT TEAM";
-          
+
           return (
             <div key={sectionIndex}>
               <motion.div
@@ -806,7 +838,7 @@ function TeamPage() {
                 >
                   {section.title}
                 </h2>
-                
+
                 {isWebDev && (
                   <button
                     onClick={() => setIsWebDevExpanded(!isWebDevExpanded)}
