@@ -150,6 +150,55 @@ export function Profile() {
           </div>
         )}
       </div>
+
+      {/* REGISTRATION LINK SECTION */}
+      {user && (
+        <div className="w-full flex justify-center px-4 pb-12">
+          <div
+            className="
+              glow-card 
+              w-full max-w-3xl 
+              p-6 sm:p-8 
+              rounded-2xl 
+              border-4 border-[#FED000] 
+              font-['Cinzel Decorative'] 
+              bg-black/10 
+              flex flex-col 
+              gap-4
+              text-center
+            "
+          >
+            <h2 className="text-xl sm:text-2xl text-[#FED000] font-bold">
+              ⚠️ IMPORTANT: Valid Pass Registration
+            </h2>
+            <p className="text-white text-sm sm:text-base leading-relaxed">
+              You <strong className="text-[#FED000]">MUST</strong> register through the link below to obtain a valid pass. 
+              This registration is <strong className="text-[#FED000]">mandatory</strong> to enter events and attend the star night.
+            </p>
+            <a
+              href="https://myntra.onelink.me/dNYC/psb0vkzt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                mt-2
+                w-full 
+                bg-[#FED000] 
+                text-black 
+                py-3 
+                rounded-xl 
+                text-base sm:text-lg 
+                font-bold
+                tracking-wide 
+                hover:bg-yellow-400 
+                transition
+                inline-block
+              "
+            >
+              REGISTER FOR VALID PASS →
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
