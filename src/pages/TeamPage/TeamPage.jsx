@@ -467,7 +467,7 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "PRANEET",
+        name: "PRANEETH",
         surname: "KOLLI",
         role: "Co-Head",
         img: Kolli_Praneeth,
