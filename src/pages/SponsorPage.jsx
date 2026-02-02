@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader/PageHeader';
+import Seo from "../components/Seo";
 import "./sponsers.css";
 
 import pepsiImg from '/sponsers/pepsi.png';
@@ -40,6 +41,11 @@ import krafton from '/sponsers/krafton.png'
 function SponsorPage() {
   return (
     <>
+      <Seo
+        title="Sponsors | Srijan 2026"
+        description="Discover the incredible partners and sponsors who make Srijan 2026 possible! From title sponsors to media partners, explore the brands that support our celebration of culture, talent, and innovation."
+        url="https://srijan2026.vercel.app/sponsors"
+      />
       <div>
         <PageHeader
           title="SPONSORS"

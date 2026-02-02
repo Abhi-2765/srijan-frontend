@@ -12,6 +12,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Seo from "../../components/Seo";
 import "./EventPage.css";
 
 const categories = [
@@ -37,7 +38,7 @@ const dates = [
 export default function EventPage() {
 
   const [activeCategory, setActiveCategory] = useState("ALL");
-  const [activeDate,setActiveDate]=useState("ALL");
+  const [activeDate, setActiveDate] = useState("ALL");
 
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
@@ -59,6 +60,11 @@ export default function EventPage() {
 
   return (
     <div className="event-page-container">
+      <Seo
+        title="Events | Srijan 2026"
+        description="Get ready to be swept away by a whirlwind of creativity, talent, and pure entertainment! Srijan 2026 presents an electrifying lineup of events that will ignite your senses and leave you spellbound. From soul-stirring performances to adrenaline-pumping competitions, there's something for everyone to enjoy. Don't miss out on the most happening event of the year!"
+        url="https://srijan2026.vercel.app/events"
+      />
       <div className="event-page-content">
         <PageHeader
           title="EVENTS"
