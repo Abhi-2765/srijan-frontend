@@ -1,5 +1,5 @@
 import "./TeamPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Seo from "../../components/Seo";
@@ -711,6 +711,7 @@ const teamSections = [
 
 function TeamPage() {
   const [isWebDevExpanded, setIsWebDevExpanded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const renderTeamMembers = (members, isWebDev = false) => {
     let displayMembers = members;
@@ -720,14 +721,29 @@ function TeamPage() {
       displayMembers = members.slice(0, 3);
     }
 
-    return displayMembers.map((member, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.15 }}
-        whileHover={{ scale: 1.07 }}
+    return displayMembers.map((member, index) => {
+      const imgKey = `${member.name}-${member.surname}`;
+
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.15 }}
+          whileHover={{ scale: 1.07 }}
+          onViewportEnter={() => {
+            if (!loadedImages[imgKey]) {
+              const img = new Image();
+              img.src = member.img;
+              img.onload = () => {
+                setLoadedImages((prev) => ({
+                  ...prev,
+                  [imgKey]: member.img,
+                }));
+              };
+            }
+          }}
         className="group relative rounded-2xl p-0.5 pb-8
               w-[260px] sm:w-[280px]
               bg-linear-to-br from-yellow-400 to-yellow-600
@@ -737,7 +753,12 @@ function TeamPage() {
         <div
           className="relative rounded-2xl overflow-hidden flex flex-col justify-end
                       h-[350px] bg-center bg-cover"
-          style={{ backgroundImage: `url(${member.img})` }}
+          style={{
+          backgroundImage: loadedImages[imgKey]
+            ? `url(${loadedImages[imgKey]})`
+            : "none",
+        }}
+
         >
           <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
             {member.linkedin && (
@@ -807,7 +828,8 @@ function TeamPage() {
           </div>
         </div>
       </motion.div>
-    ));
+    );
+  });
   };
 
   return (
