@@ -63,9 +63,9 @@ export default function EventPage() {
         <PageHeader
           title="EVENTS"
           // subtitle="Explore the vibrant spectrum of cultural celebrations"
-          subtitle="If you have purchased pass for 1 DAY in that case you can only register for DAY 1 events i.e. 6th Feb on the website , If you have purchased pass for 2 DAYS in that case you can only register for DAY 1 & 2 events i.e. 6th and 7th Feb on the website,
+          subtitle="If you have purchased pass for 1 DAY in that case you can only register for DAY 1 events i.e. 5th and 6th Feb on the website , If you have purchased pass for 2 DAYS in that case you can only register for DAY 1 & 2 events i.e. 5th, 6th and 7th Feb on the website,
 
-          If you have purchased pass for 3 DAYS in that case you can register for DAY 1,2 & 3 events i.e. 6th, 7th and 8th Feb on the website,
+          If you have purchased pass for 3 DAYS in that case you can register for DAY 1,2 & 3 events i.e. 5th, 6th, 7th and 8th Feb on the website,
           "
           showBackButton={true}
           backPath="/"
