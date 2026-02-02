@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./EventCard.css";
+import { useNavigate } from "react-router";
 
 export default function EventCard({ event, index, onClick }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -123,6 +125,19 @@ export default function EventCard({ event, index, onClick }) {
               whileTap={{ scale: 0.98 }}
             >
               CLICK FOR MORE DETAILS
+            </motion.button>
+
+            <motion.button
+              className="back-details-btn"
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "#FED000",
+                boxShadow: "0 0 25px rgba(254, 208, 0, 0.6)"
+              }}
+              onClick={()=>{navigate('/register')}}
+              whileTap={{ scale: 0.98 }}
+            >
+              REGISTER
             </motion.button>
           </div>
         </motion.div>

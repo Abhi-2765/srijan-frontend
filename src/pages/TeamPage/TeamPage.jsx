@@ -2,6 +2,7 @@ import "./TeamPage.css";
 import { useState } from "react";
 import React from "react";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Seo from "../../components/Seo";
 import { motion } from "framer-motion";
 import { FaLinkedinIn, FaInstagram, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -467,7 +468,7 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "PRANEET",
+        name: "PRANEETH",
         surname: "KOLLI",
         role: "Co-Head",
         img: Kolli_Praneeth,
@@ -811,6 +812,11 @@ function TeamPage() {
 
   return (
     <div className="min-h-screen bg-linear-to-b from transparen-[#08061E] via-[#301258] to-[#48286f]  pb-24">
+      <Seo
+        title="Team | Srijan 2026"
+        description="Meet the passionate individuals behind Srijan 2026! Discover the dedicated team members who work tirelessly to bring you an unforgettable cultural experience."
+        url="https://srijan2026.vercel.app/team"
+      />
       <PageHeader
         title="TEAM"
         subtitle="Explore the vibrant spectrum of cultural celebrations"
