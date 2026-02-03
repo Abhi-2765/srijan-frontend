@@ -13,7 +13,6 @@ import MUSIC from "./Images/MUSIC.jpg";
 
 export default function Display({ category , date }) {
   const [allEvents, setAllEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   // Fetch events based on category
