@@ -55,7 +55,6 @@ import shaumya from "./ProfileImage/shaumya.jpg"
 import MadhulikaGupta from "./ProfileImage/MadhulikaGupta.png"
 import PriyanshKedia from "./ProfileImage/PriyanshKedia.png"
 import Suresh from "./ProfileImage/Suresh.png"
-import Rajarsree from "./ProfileImage/Rajarsee.jpg"
 
 const teamSections = [
   {
@@ -182,7 +181,7 @@ const teamSections = [
         name: "Rajarsee ",
         surname: "Chakraborty ",
         role: "Member",
-        img: Rajarsree,
+        img: img1,
         linkedin: "https://www.linkedin.com/in/rajarsee-chakraborty-919bb531b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://www.instagram.com/rajarseechakraborty5?igsh=d3d2ZHphYWdlcDUz",
       },
