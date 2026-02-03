@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import EventCard from "./EventCard";
-import EventModal from "./EventModal";
+// import EventModal from "./EventModal";
 
 import ART from "./Images/ART.jpg";
 import CINEMA from "./Images/CINEMA.jpg";
@@ -13,7 +13,6 @@ import MUSIC from "./Images/MUSIC.jpg";
 
 export default function Display({ category , date }) {
   const [allEvents, setAllEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   // Fetch events based on category
@@ -76,11 +75,11 @@ export default function Display({ category , date }) {
         ))}
       </div>
 
-      <EventModal
+      {/* <EventModal
         isOpen={!!selectedEvent}
         onClose={() => setSelectedEvent(null)}
         eventData={selectedEvent}
-      />
+      /> */}
     </>
   );
 }

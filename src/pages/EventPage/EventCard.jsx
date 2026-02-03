@@ -14,15 +14,19 @@ export default function EventCard({ event, index, onClick }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      onHoverStart={() => setIsFlipped(true)}
-      onHoverEnd={() => setIsFlipped(false)}
     >
       <motion.div
         className="event-card-inner"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
         style={{ transformStyle: "preserve-3d" }}
-        onClick={onClick}
+        onClick={() => {
+          if (!isFlipped) {
+            setIsFlipped(true);
+          } else if (event.registration_link) {
+            window.open(event.registration_link, '_blank');
+          }
+        }}
       >
         <motion.div
           className="event-card-front"
@@ -47,7 +51,7 @@ export default function EventCard({ event, index, onClick }) {
 
               <h3 className="card-name">{event.event_name}</h3>
 
-              <p className="card-hint">Hover to see details</p>
+              <p className="card-hint">Click to see details</p>
             </div>
 
             <div className="decorative-corners">
@@ -75,6 +79,18 @@ export default function EventCard({ event, index, onClick }) {
               <div className="circle top-right" />
               <div className="circle bottom-left" />
             </div>
+
+            <motion.button
+              className="back-close-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFlipped(false);
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              ✕
+            </motion.button>
 
             <div className="back-header">
               <motion.div
@@ -115,7 +131,7 @@ export default function EventCard({ event, index, onClick }) {
               </div>
             </div>
 
-            <motion.button
+            {/* <motion.button
               className="back-details-btn"
               whileHover={{
                 scale: 1.02,
@@ -123,9 +139,12 @@ export default function EventCard({ event, index, onClick }) {
                 boxShadow: "0 0 25px rgba(254, 208, 0, 0.6)"
               }}
               whileTap={{ scale: 0.98 }}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
             >
               CLICK FOR MORE DETAILS
-            </motion.button>
+            </motion.button> */}
 
             <motion.button
               className="back-details-btn"
@@ -134,11 +153,15 @@ export default function EventCard({ event, index, onClick }) {
                 backgroundColor: "#FED000",
                 boxShadow: "0 0 25px rgba(254, 208, 0, 0.6)"
               }}
-              onClick={()=>{navigate('/register')}}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFlipped(false);
+              }}
               whileTap={{ scale: 0.98 }}
             >
-              REGISTER
+              REGISTER NOW
             </motion.button>
+            
           </div>
         </motion.div>
       </motion.div>
