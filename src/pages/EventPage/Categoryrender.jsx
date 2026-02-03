@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import EventCard from "./EventCard";
-import EventModal from "./EventModal";
+// import EventModal from "./EventModal";
 
 import ART from "./Images/ART.jpg";
 import CINEMA from "./Images/CINEMA.jpg";
@@ -76,11 +76,11 @@ export default function Display({ category , date }) {
         ))}
       </div>
 
-      <EventModal
+      {/* <EventModal
         isOpen={!!selectedEvent}
         onClose={() => setSelectedEvent(null)}
         eventData={selectedEvent}
-      />
+      /> */}
     </>
   );
 }

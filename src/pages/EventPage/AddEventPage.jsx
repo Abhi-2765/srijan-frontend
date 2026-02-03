@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import EventCard from "./EventCard";
-import EventModal from "./EventModal";
 import "./AddEventPage.css";
 
 const AddEventPage = () => {
@@ -290,12 +289,6 @@ const AddEventPage = () => {
                     </motion.div>
                 </div>
             </div>
-
-            <EventModal
-                isOpen={showPreview}
-                onClose={() => setShowPreview(false)}
-                eventData={formData}
-            />
         </div>
     );
 };
