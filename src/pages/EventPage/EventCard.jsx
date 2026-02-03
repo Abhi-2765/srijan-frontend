@@ -100,7 +100,7 @@ export default function EventCard({ event, index, onClick }) {
 
               <div className="back-details-grid">
                 <div className="back-detail-item">
-                  <p className="detail-label">PRIZE</p>
+                  <p className="detail-label">PRIZES WORTH</p>
                   <p className="detail-value">{event.prize}</p>
                 </div>
                 <div className="back-detail-item">

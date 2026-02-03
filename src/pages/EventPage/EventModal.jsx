@@ -135,7 +135,7 @@ const EventModal = ({ isOpen, onClose, eventData }) => {
               >
                 <h4 className="event-modal-section-title">
                   <span className="section-icon">🏆</span>
-                  Prize
+                  Prizes Worth
                 </h4>
                 <p className="event-modal-text">
                   {eventData.prize || "N/A"}
